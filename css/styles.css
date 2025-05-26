@@ -1,0 +1,101 @@
+body {
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+
+.container-fluid {
+    padding: 2rem;
+}
+
+.editor-panel {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    height: calc(100vh - 4rem);
+    overflow-y: auto;
+}
+
+.preview-panel {
+    padding: 2rem;
+    height: calc(100vh - 4rem);
+    overflow-y: auto;
+}
+
+#previewArea {
+    background-color: white;
+    border-radius: 8px;
+    min-height: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.code-display {
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    padding: 1rem;
+}
+
+.code-display pre {
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.tab-content {
+    padding-top: 2rem;
+}
+
+.editor-control {
+    margin-bottom: 1.5rem;
+}
+
+.editor-control label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+input[type="color"] {
+    height: 40px;
+    padding: 2px;
+    width: 60px;
+}
+
+input[type="range"] {
+    width: 100%;
+}
+
+.preview-header,
+.preview-menu,
+.preview-gallery,
+.preview-form,
+.preview-footer {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border: 1px dashed #dee2e6;
+}
+
+.gallery-card {
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-field {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+}
+
+@media (max-width: 1600px) {
+    .container-fluid {
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+} 
