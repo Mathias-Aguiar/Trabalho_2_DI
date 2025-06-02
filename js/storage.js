@@ -1,13 +1,11 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Show code
     document.getElementById('showCode').addEventListener('click', () => {
         const codeDisplay = document.getElementById('htmlCode');
         const generatedHtml = generateCompleteHtml();
         codeDisplay.textContent = generatedHtml;
     });
 
-    // Save
     document.getElementById('saveCode').addEventListener('click', () => {
         try {
             const generatedHtml = generateCompleteHtml();
@@ -20,23 +18,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Load from localStorage
     document.getElementById('loadCode').addEventListener('click', () => {
         try {
             const savedHtml = localStorage.getItem('savedHtml');
             const savedState = localStorage.getItem('editorState');
             
             if (savedHtml && savedState) {
-                // Restore
                 Object.assign(editorState, JSON.parse(savedState));
                 
-                // Update all
                 renderHeaderElements();
                 renderMenuItems();
                 renderGalleryCards();
                 renderFormFields();
                 
-                // Update preview
                 updatePreview();
                 
                 alert('Código HTML carregado com sucesso!');
@@ -49,15 +43,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Clear localStorage
     document.getElementById('clearStorage').addEventListener('click', () => {
         if (confirm('Tem certeza que deseja limpar o localStorage? Esta ação não pode ser desfeita.')) {
             try {
                 localStorage.removeItem('savedHtml');
                 localStorage.removeItem('editorState');
                 alert('LocalStorage limpo com sucesso!');
-                
-                // Reset
+
                 Object.assign(editorState, {
                     header: { elements: [], maxElements: 3 },
                     menu: { items: [], logo: null },
@@ -73,14 +65,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     }
                 });
-                
-                // Update all
+
                 renderHeaderElements();
                 renderMenuItems();
                 renderGalleryCards();
                 renderFormFields();
                 
-                // Update preview
                 updatePreview();
             } catch (error) {
                 console.error('Erro ao limpar localStorage:', error);
